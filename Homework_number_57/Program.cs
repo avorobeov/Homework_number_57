@@ -18,7 +18,7 @@ namespace Homework_number_57
             Console.ReadKey();
             Console.Clear();
 
-            database.FilterSoldierwithInitialLetter(initialLetter);
+            database.MoveSoldierWithInitialLetter(initialLetter);
 
             database.ShowAllSquad();
 
@@ -52,7 +52,7 @@ namespace Homework_number_57
             Fill();
         }
 
-        public void FilterSoldierwithInitialLetter(string initialLetter)
+        public void MoveSoldierWithInitialLetter(string initialLetter)
         {
             var filteredSoldiers = (from Soldier soldier in _firstSquad
                                     where soldier.Name.StartsWith(initialLetter)
