@@ -60,7 +60,9 @@ namespace Homework_number_57
 
             _secondSquad = _secondSquad.Union(filteredSoldiers).ToList();
 
-            _firstSquad.RemoveAll(soldier => soldier.Name.StartsWith(initialLetter));
+            _firstSquad = (from Soldier soldier in _firstSquad
+                           where !soldier.Name.StartsWith(initialLetter)
+                           select soldier).ToList();
         }
 
         public void ShowAllSquad()
